@@ -37,7 +37,7 @@
     pollEveryMs: 20000,
     longPressMs: 700,
     // Date and time format, e.g. 'en-AU', 'en-GB', 'en-US'. Empty: the TV's own.
-    locale: '',
+    locale: 'en-GB',
 
     // How YouTube shortcuts are handed to the YouTube app. 'uri' sends
     // https://www.youtube.com/watch?v=...; 'payload' is Samsung's Smart Hub
@@ -51,11 +51,11 @@
     // Off until you set your location. Find coordinates with
     // https://geocoding-api.open-meteo.com/v1/search?name=YOUR+TOWN
     weather: {
-      enabled: false,
-      place: '',                 // label under the forecast, e.g. 'Springfield'
-      latitude: 0,
-      longitude: 0,
-      timezone: 'auto',          // or an IANA name such as 'Europe/London'
+      enabled: true,
+      place: 'Abu Dhabi',        // label under the forecast, e.g. 'Springfield'
+      latitude: 24.4539,
+      longitude: 54.3773,
+      timezone: 'Asia/Dubai',          // or an IANA name such as 'Europe/London'
       temperatureUnit: 'celsius',   // or 'fahrenheit'
       refreshMs: 30 * 60 * 1000
     },
@@ -74,18 +74,16 @@
     // apps (YouTube reports its Cobalt engine's pinwheel, Prime Video's may not
     // load, Samsung TV Plus is a system app), so those default to name tiles.
     apps: [
-      { key: 'youtube', label: 'YouTube', ids: ['9Ur5IzDKqV.TizenYouTube', 'com.samsung.tv.cobalt-yt'],
-        names: ['^youtube$'], icon: false },
       { key: 'netflix', label: 'Netflix', ids: ['org.tizen.netflix-app'],
         names: ['^netflix$', '\\bnetflix\\b'] },
+      { key: 'youtube', label: 'YouTube', ids: ['9Ur5IzDKqV.TizenYouTube', 'com.samsung.tv.cobalt-yt'],
+        names: ['^youtube$'], icon: false },
+      { key: 'appletv', label: 'Apple TV', ids: [],
+        names: ['^apple tv$', '\\bapple tv\\b'], icon: false },
       { key: 'prime', label: 'Prime Video', ids: ['org.tizen.primevideo', 'org.tizen.ignition'],
         names: ['^prime video$', '^amazon prime video$', '\\bprime video\\b'], icon: false },
-      { key: 'tvplus', label: 'Samsung TV Plus', ids: ['com.samsung.tv.tvPlusDeeplinker', 'com.samsung.tv.tvplus'],
-        names: ['^samsung tv plus$', '^tv plus$', 'samsung tv plus'], icon: false },
-      { key: 'disney', label: 'Disney+', ids: ['MCmYXNxgcu.DisneyPlus'],
-        names: ['^disney plus$', '\\bdisney plus\\b', '^disney$'] },
-      { key: 'browser', label: 'Internet', ids: ['org.tizen.browser'],
-        names: ['^internet$', '^browser$'] }
+      { key: 'osn', label: 'OSN+', ids: [],
+        names: ['^osn plus$', '\\bosn plus\\b', '^osn$'], icon: false }
     ]
   };
 }());
